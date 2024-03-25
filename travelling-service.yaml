@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+  namespace: production
+  labels:  
+    app: travelling-app
+spec:
+  selector:
+    app: my-pod-app
+  type: LoadBalancer
+  ports:
+   - targetPort: 8080
+     port: 8080
+     nodePort: 32000
+     
